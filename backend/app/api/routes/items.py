@@ -26,11 +26,7 @@ def read_items(
         )
         items = session.exec(statement).all()
     else:
-        count_statement = (
-            select(func.count())
-            .select_from(Item)
-            .where(Item.owner_id == current_user.id)
-        )
+        count_statement = select(func.count()).select_from(Item)
         count = session.exec(count_statement).one()
         statement = (
             select(Item)

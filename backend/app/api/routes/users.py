@@ -167,7 +167,7 @@ def read_user_by_id(
     Get a specific user by id.
     """
     user = session.get(User, user_id)
-    if user == current_user:
+    if user.id == current_user.id:
         return user
     if not current_user.is_superuser:
         raise HTTPException(

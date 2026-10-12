@@ -185,7 +185,7 @@ export function DataTable<TData extends RowData>({
                 variant="outline"
                 size="sm"
                 className="h-8 w-8 p-0"
-                onClick={() => table.setPageIndex(table.getPageCount() - 1)}
+                onClick={() => table.setPageIndex(table.getPageCount())}
                 disabled={!table.getCanNextPage()}
               >
                 <span className="sr-only">Go to last page</span>
